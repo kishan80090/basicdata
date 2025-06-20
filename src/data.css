@@ -1,0 +1,26 @@
+.col{
+    color: red;
+}
+.col1{
+    color: blue;
+    width: 15%;
+    height: 35px;
+    font-size:18px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    background-color: black;
+}
+.col1:hover{
+    color: white;
+}
+.input{
+    height: 27px;
+    width: 20%;
+    font-size:20px;
+    border-color:green;
+    border-width: 1cqmax;
+}
+
