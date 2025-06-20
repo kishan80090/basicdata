@@ -38,7 +38,7 @@ function Basic() {
     <div className="mar" >
       <h1>{setData}</h1>
     <form onSubmit={handleSubmit} ><center>
-      <h2 className='col'><b>||✍🏻------------Result------------✍🏻||</b></h2>
+      <h2 className='col'><b>||✍🏻----------Result----------✍🏻||</b></h2>
       <label>
         <h3 className="fill" >Fill The Roll Number</h3>
         <input type="number" name="rollno" className="input" placeholder="Roll No..." value={formData.rollno} onChange={handleChange} required/>
