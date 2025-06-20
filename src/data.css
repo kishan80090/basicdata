@@ -1,5 +1,5 @@
 .col{
-    color: red;
+    color:red;
 }
 .col1{
     color: blue;
@@ -11,10 +11,10 @@
     align-items: center;
     justify-content: center;
     border: none;
-    background-color: black;
+    background-color: rgb(94, 182, 182);
 }
 .col1:hover{
-    color: white;
+    color: red;
 }
 .input{
     height: 27px;
@@ -22,5 +22,31 @@
     font-size:20px;
     border-color:green;
     border-width: 1cqmax;
+}
+.fill{
+    color: rgb(3, 0, 0);
+}
+.data{
+ color:rgb(6, 2, 253);
+ font-size:30px;
+ font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
+  'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.table {
+  width: 90%;
+  margin: 30px auto;
+  border-collapse: collapse;
+  font-size: 20px;
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.4);
+  color: black;
+}
+.table th, .table td {
+  border: 2px solid black;
+  padding: 12px 15px;
+  text-align: center;
+}
+.table th {
+  background-color:rgb(10, 92, 92);
+  text-transform: uppercase;
 }
 

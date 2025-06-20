@@ -26,29 +26,32 @@ function Basic() {
     let rollno=x[0]["roll"];
     let maths=x[0]["maths"];
     let physics=x[0]["physics"];
-    let xyz =`<table border='1'><tr><td>Rollno</td><td>Name</td><td>Maths</td><td>Physics</td></tr>`;
-    xyz+=`<tr><td>${rollno}</td><td>${name}</td><td>Maths</td><td>Physics</td></tr></table>`;
+    let english=x[0]["english"];
+    let total=(maths)+(physics)+(english);
+    let Prasentese=(total)/3;
+    let xyz =`<table border='1' class="table" ><tr><th>Rollno</th><th>Name</th><th>Maths</th><th>Physics</th><th>English</th><th>Total marks</th><th>Prasentese</tr>`;
+      xyz +=`<h3>Check is successully</h3><tr><td>${rollno}</td><td>${name}</td><td>${maths}</td><td>${physics}</td><td>${english}</td><td>${total}</td><td>${Prasentese}%</td></tr></table>`;
     document.getElementById("d").innerHTML=xyz;
     setData(xyz);
-    // console.table(result);
   };
   return (
-    <div>
-      <div id="d"></div>
-      <h1>{data}</h1>
-    <form onSubmit={handleSubmit}><center>
+    <div >
+      <h1>{setData}</h1>
+    <form onSubmit={handleSubmit} ><center>
       <h2 className='col'><b>||✍🏻------------Result------------✍🏻||</b></h2>
       <label>
-        <h3>Fill The Roll Number</h3>
+        <h3 className="fill" >Fill The Roll Number</h3>
         <input type="number" name="rollno" className="input" placeholder="Roll No..." value={formData.rollno} onChange={handleChange} required/>
       </label>
       <br/><br/>
       <button  type="submit" className='col1'><b>Click</b></button>
       <br/>
-      <h1></h1>
+      </center>
+      <center>
+        <div id="d" className="data"></div>
       </center>
     </form>
     </div>
   );
-};
+}
 export default Basic;

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Stylish Rain + Lightning</title>
+  <style>
+    body {
+      background: linear-gradient(to bottom, #0a0a0a, #1a1a1a);
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: start;
+      min-height: 100vh;
+      color: #fff;
+    }
+
+    h1 {
+      text-align: center;
+      margin: 20px;
+      font-weight: 500;
+    }
+
+    .rain-effect {
+      position: relative;
+      width: 90%;
+      max-width: 400px;
+      height: 250px;
+      background: #222;
+      border-radius: 15px;
+      box-shadow: 0 0 20px rgba(0, 255, 255, 0.4);
+      margin: 20px auto;
+      overflow: hidden;
+      text-align: center;
+      line-height: 250px;
+      font-size: 24px;
+      color: #0ff;
+      z-index: 1;
+    }
+
+    .rain-drop {
+      position: absolute;
+      width: 2px;
+      height: 20px;
+      background: rgba(0, 255, 255, 0.6);
+      border-radius: 50%;
+      animation: fall linear infinite;
+    }
+
+    @keyframes fall {
+      0% {
+        transform: translateY(-100%);
+        opacity: 0;
+      }
+      10% {
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(120%);
+        opacity: 0;
+      }
+    }
+
+    .lightning {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: white;
+      opacity: 0;
+      z-index: 5;
+      pointer-events: none;
+      border-radius: 15px;
+    }
+
+    @keyframes flash {
+      0% { opacity: 0; }
+      10% { opacity: 0.8; }
+      20% { opacity: 0; }
+      100% { opacity: 0; }
+    }
+
+    .no-rain {
+      width: 90%;
+      max-width: 400px;
+      height: 250px;
+      background: #333;
+      margin: 20px auto;
+      border-radius: 15px;
+      text-align: center;
+      line-height: 250px;
+      color: #fff;
+      font-size: 24px;
+      box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.1);
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🌧️ Stylish Rain + ⚡ Lightning Effect</h1>
+
+  <!-- With Rain Effect -->
+  <div class="rain-effect">Rain + Lightning Zone</div>
+
+  <!-- Without Rain -->
+  <div class="no-rain">Normal Box</div>
+
+  <script>
+    function applyRainEffect(selector = '.rain-effect') {
+      document.querySelectorAll(selector).forEach(container => {
+        // Add 60 drops
+        for (let i = 0; i < 60; i++) {
+          const drop = document.createElement('div');
+          drop.classList.add('rain-drop');
+          drop.style.left = `${Math.random() * 100}%`;
+          drop.style.animationDuration = `${0.5 + Math.random()}s`;
+          drop.style.animationDelay = `${Math.random() * 3}s`;
+          container.appendChild(drop);
+        }
+
+        // Lightning flash layer
+        const lightning = document.createElement('div');
+        lightning.classList.add('lightning');
+        container.appendChild(lightning);
+
+        // Flash randomly every few seconds
+        function flashLightning() {
+          lightning.style.animation = 'flash 0.3s ease-in-out';
+          setTimeout(() => {
+            lightning.style.animation = '';
+          }, 300);
+
+          const nextFlash = 3000 + Math.random() * 4000;
+          setTimeout(flashLightning, nextFlash);
+        }
+
+        flashLightning();
+      });
+    }
+
+    // Initialize
+    applyRainEffect();
+  </script>
+</body>
+</html>

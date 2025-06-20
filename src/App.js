@@ -1,5 +1,4 @@
 import Basic from "./component/Basic";
-
 function App() {
   return(
     <div>
