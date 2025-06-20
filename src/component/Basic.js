@@ -35,7 +35,7 @@ function Basic() {
     setData(xyz);
   };
   return (
-    <div >
+    <div className="mar" >
       <h1>{setData}</h1>
     <form onSubmit={handleSubmit} ><center>
       <h2 className='col'><b>||✍🏻------------Result------------✍🏻||</b></h2>
